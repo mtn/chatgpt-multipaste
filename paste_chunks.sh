@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "=== paste_chunks.sh start $(date) ==="
-CHUNK=${CHUNK:-8192}
+CHUNK=${CHUNK:-81920}
 TEXT=$(pbpaste)
 echo "clipboard length: ${#TEXT}"
 
