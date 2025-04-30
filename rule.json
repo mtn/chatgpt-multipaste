@@ -1,0 +1,23 @@
+{
+  "description": "?V ? chunked paste (ChatGPT only)",
+  "manipulators": [
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": ["^com\\.openai\\.chat$"],
+          "type": "frontmost_application_if"
+        }
+      ],
+      "from": {
+        "key_code": "v",
+        "modifiers": { "mandatory": ["command"] }
+      },
+      "to": [
+        {
+          "shell_command": "bash -lc '/usr/local/bin/paste_chunks.sh >> /tmp/paste_chunks.log 2>&1'"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
